@@ -87,6 +87,7 @@ const Header = () => {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
+                  left: '-40px',
                   display: { xs: 'block', md: 'none' },
                 }}
               >

@@ -31,7 +31,7 @@ const CatePost = (props) => {
                     textAlign: 'center',
 
                     typography: {
-                      xs: { top: '10%', height: '80px', margin: '5%', padding: '20px ' },
+                      xs: { top: '1x`%', height: '80px', margin: '5%', padding: '20px ' },
                       sm: { top: '15%', height: '80px', margin: '15%', padding: '20px ' },
                       md: {
                         top: '10%',
