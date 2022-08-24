@@ -34,7 +34,7 @@ const PostKynguyenso = (props) => {
             }}
           >
             <Link href="/chuyen-muc/ky-nguyen-so" sx={{ textDecoration: 'none', color: '#212529' }}>
-              KỶ NGUYÊN SỐ
+              CÔNG NGHỆ MỚI
             </Link>
           </Typography>
         </Grid>

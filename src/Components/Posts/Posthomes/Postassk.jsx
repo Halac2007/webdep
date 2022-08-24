@@ -32,7 +32,7 @@ const Postassk = (props) => {
             }}
           >
             <Link href="/chuyen-muc/an-sach-song-khoe" sx={{ textDecoration: 'none', color: '#212529' }}>
-              ĂN SẠCH SỐNG KHỎE
+              SỨC KHỎE - LÀM ĐẸP
             </Link>
           </Typography>
         </Grid>

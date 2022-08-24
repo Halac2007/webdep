@@ -33,7 +33,7 @@ const Postxevaluat = (props) => {
             }}
           >
             <Link href="/chuyen-muc/xe-va-luat" sx={{ textDecoration: 'none', color: '#212529' }}>
-              XE VÀ LUẬT
+              Ô TÔ
             </Link>
           </Typography>
         </Grid>

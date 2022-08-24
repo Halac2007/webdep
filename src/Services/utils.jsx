@@ -1,7 +1,7 @@
 export const menuHeads = [
   {
     url: 'ky-nguyen-so',
-    tittle: 'KỶ NGUYÊN SỐ',
+    tittle: 'CÔNG NGHỆ MỚI',
     chilren: [
       {
         childtitle: 'CÔNG NGHỆ',
@@ -16,7 +16,7 @@ export const menuHeads = [
   },
   {
     url: 'an-sach-song-khoe',
-    tittle: 'ĂN SẠCH SỐNG KHỎE',
+    tittle: 'SỨC KHỎE - LÀM ĐẸP',
     chilren: [
       {
         childtitle: 'CÔNG NGHỆ',
@@ -31,7 +31,7 @@ export const menuHeads = [
   },
   {
     url: 'xe-va-luat',
-    tittle: 'XE VÀ LUẬT',
+    tittle: 'Ô TÔ',
     chilren: [
       {
         childtitle: 'CÔNG NGHỆ',

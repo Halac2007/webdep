@@ -11,10 +11,11 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 const menus = [
-  { id: 1, title: 'Kỷ nguyên số', url: '/chuyen-muc/ky-nguyen-so' },
-  { id: 2, title: 'Ăn sạch sống khỏe', url: '/chuyen-muc/an-sach-song-khoe' },
-  { id: 3, title: 'Xe và luật', url: '/chuyen-muc/xe-va-luat' },
+  { id: 1, title: 'Công nghệ mới', url: '/chuyen-muc/ky-nguyen-so' },
+  { id: 2, title: 'Sức khỏe - Làm đẹp', url: '/chuyen-muc/an-sach-song-khoe' },
+  { id: 3, title: 'Ô tô', url: '/chuyen-muc/xe-va-luat' },
 ]
 
 const Header = () => {
