@@ -32,7 +32,7 @@ const Chuyenmuc = () => {
     axios.get(url).then((res) => {
       const data = res.data.map((item) => ({
         title: item.title,
-        url: item.link,
+        link: item.link,
         image: item.image,
       }))
       setMainPosts(data.slice(0, 1))
@@ -47,7 +47,7 @@ const Chuyenmuc = () => {
   const headerChildren = menuHeads.filter((item) => item.url === name)[0].chilren
   return (
     <>
-      <Grid container maxWidth="lg" margin="auto">
+      <Grid container maxWidth="1000px" margin="auto">
         <Grid item xs={12} sm={12} md={12}>
           <Typography
             sx={{
@@ -69,7 +69,7 @@ const Chuyenmuc = () => {
         </Grid>
       </Grid>
 
-      <Grid container maxWidth="lg" spacing={0} margin="auto">
+      <Grid container maxWidth="1000px" spacing={0} margin="auto">
         <Grid
           container
           item
@@ -87,6 +87,8 @@ const Chuyenmuc = () => {
                   <Typography
                     sx={{
                       textAlign: 'center',
+                      textTransform: 'uppercase',
+                      padding: '15px 0',
                       typography: { xs: { fontSize: '1.2rem' }, sm: { fontSize: '1.2rem' }, md: { fontSize: '1.2rem' } },
                     }}
                   >
@@ -105,7 +107,7 @@ const Chuyenmuc = () => {
                   sx={{ textDecoration: 'none', color: '#212529', paddingBottom: '10px', marginBottom: '10px' }}
                   className="CateBox_Child"
                 >
-                  <img src={item.image} width="100%" height="200px" alt="" />
+                  <img src={item.image} width="100%" height="auto" alt="" />
                   <Typography sx={{ textAlign: 'left' }}>{item.title}</Typography>
                 </Link>
               ))}
@@ -114,7 +116,7 @@ const Chuyenmuc = () => {
         </Grid>
       </Grid>
 
-      <Grid container maxWidth="lg" spacing={0} margin="auto">
+      <Grid container maxWidth="1000px" spacing={0} margin="auto">
         <Grid
           container
           item
