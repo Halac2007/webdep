@@ -30,15 +30,15 @@ const Services = () => {
         imagetop: item.imageTop,
         time: item.time,
       }))
-      setOaPost(data.slice(4, 5))
+      setOaPost(data.slice(0, 1))
 
-      setRightPost(data.slice(9, 10))
-      setFoodChild1(data.slice(10, 11))
-      setFoodChild2(data.slice(11, 12))
-      setFoodChild3(data.slice(12, 13))
-      setFoodChild4(data.slice(13, 14))
-      setFoodChild5(data.slice(14, 15))
-      setFoodChild6(data.slice(15, 16))
+      setRightPost(data.slice(5, 6))
+      setFoodChild1(data.slice(6, 7))
+      setFoodChild2(data.slice(7, 8))
+      setFoodChild3(data.slice(8, 9))
+      setFoodChild4(data.slice(9, 10))
+      setFoodChild5(data.slice(10, 11))
+      setFoodChild6(data.slice(11, 12))
     })
   }, [])
 
@@ -53,7 +53,7 @@ const Services = () => {
   const [listPostChild, setListPostChild] = useState([])
 
   useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/tong-hop`).then((res) => {
+    axios.get(`https://kynguyenso.herokuapp.com`).then((res) => {
       const data = res.data.map((item) => ({
         title: item.title,
         link: item.link,
@@ -63,8 +63,8 @@ const Services = () => {
       }))
       setTopPost(data.slice(0, 1))
 
-      setHotNewsLeft(data.slice(5, 6))
-      setHotNewsRight(data.slice(6, 7))
+      setHotNewsLeft(data.slice(1, 2))
+      setHotNewsRight(data.slice(2, 3))
 
       setMainPost(data.slice(5, 6))
       setListPostChild(data.slice(6, 9))
@@ -76,7 +76,7 @@ const Services = () => {
   const [catePost, setCatePost] = useState([])
 
   useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/tong-hop`).then((res) => {
+    axios.get(`https://kynguyenso.herokuapp.com/tuyet-chieu`).then((res) => {
       const data = res.data.map((item) => ({
         title: item.title,
         link: item.link,
@@ -84,7 +84,7 @@ const Services = () => {
         imagetop: item.imageTop,
         time: item.time,
       }))
-      setCatePost(data.slice(16, 17))
+      setCatePost(data.slice(0, 1))
     })
   }, [])
 
@@ -92,7 +92,7 @@ const Services = () => {
   const [catePostChild11, setCatePostChild11] = useState([])
 
   useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/nhip-cong-nghe`).then((res) => {
+    axios.get(`https://kynguyenso.herokuapp.com/`).then((res) => {
       const data = res.data.map((item) => ({
         title: item.title,
         link: item.link,
@@ -100,15 +100,15 @@ const Services = () => {
         imagetop: item.imageTop,
         time: item.time,
       }))
-      setCatePostChild1(data.slice(3, 4))
-      setCatePostChild11(data.slice(0, 1))
+      setCatePostChild1(data.slice(5, 6))
+      setCatePostChild11(data.slice(4, 5))
     })
   }, [])
 
   const [catePostChild2, setCatePostChild2] = useState([])
 
   useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/thiet-bi-so`).then((res) => {
+    axios.get(`https://kynguyenso.herokuapp.com/`).then((res) => {
       const data = res.data.map((item) => ({
         title: item.title,
         link: item.link,
@@ -116,14 +116,14 @@ const Services = () => {
         imagetop: item.imageTop,
         time: item.time,
       }))
-      setCatePostChild2(data.slice(4, 5))
+      setCatePostChild2(data.slice(0, 1))
     })
   }, [])
 
   const [catePostChild3, setCatePostChild3] = useState([])
 
   useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/tuyet-chieu`).then((res) => {
+    axios.get(`https://kynguyenso.herokuapp.com/nhip-cong-nghe`).then((res) => {
       const data = res.data.map((item) => ({
         title: item.title,
         link: item.link,
@@ -153,7 +153,7 @@ const Services = () => {
   const [catePostChild5, setCatePostChild5] = useState([])
 
   useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/cong-nghe-40`).then((res) => {
+    axios.get(`https://kynguyenso.herokuapp.com/thiet-bi-so`).then((res) => {
       const data = res.data.map((item) => ({
         title: item.title,
         link: item.link,
@@ -188,15 +188,15 @@ const Services = () => {
         imagetop: item.imageTop,
         time: item.time,
       }))
-      setFeaPost(data.slice(4, 5))
+      setFeaPost(data.slice(0, 1))
 
-      setRightXPost(data.slice(9, 10))
-      setCarPostChild1(data.slice(10, 11))
-      setCarPostChild2(data.slice(11, 12))
-      setCarPostChild3(data.slice(12, 13))
-      setCarPostChild4(data.slice(13, 14))
-      setCarPostChild5(data.slice(14, 15))
-      setCarPostChild6(data.slice(15, 16))
+      setRightXPost(data.slice(5, 6))
+      setCarPostChild1(data.slice(6, 7))
+      setCarPostChild2(data.slice(7, 8))
+      setCarPostChild3(data.slice(8, 9))
+      setCarPostChild4(data.slice(9, 10))
+      setCarPostChild5(data.slice(10, 11))
+      setCarPostChild6(data.slice(11, 12))
     })
   }, [])
 
@@ -225,15 +225,14 @@ const Services = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const respGlobal = await axios(`https://kynguyenso.herokuapp.com/`)
       const respRepos = await axios(`https://kynguyenso.herokuapp.com/nhip-cong-nghe`)
       const res3 = await axios(`https://kynguyenso.herokuapp.com/thiet-bi-so`)
       const res4 = await axios(`https://kynguyenso.herokuapp.com/tuyet-chieu`)
-      const arr1 = respGlobal.data.splice(1, 5)
-      const arr2 = respRepos.data.splice(1, 3)
-      const arr3 = res3.data.splice(1, 3)
-      const arr4 = res4.data.splice(1, 3)
-      const arrNews = [...arr1, ...arr2, ...arr3, ...arr4]
+
+      const arr2 = respRepos.data
+      const arr3 = res3.data
+      const arr4 = res4.data
+      const arrNews = [...arr2, ...arr3, ...arr4]
 
       setListTopNews(arrNews)
     }

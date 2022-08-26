@@ -11,6 +11,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Searchs from './Searchs'
 
 const menus = [
   { id: 1, title: 'Công nghệ mới', url: '/chuyen-muc/ky-nguyen-so' },
@@ -120,6 +121,7 @@ const Header = () => {
             >
               LOGO
             </Typography>
+
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {menus.map((menu) => (
                 <Button key={Math.random()} onClick={handleCloseNavMenu} sx={{ my: 0, mx: 8, color: 'white', display: 'block' }}>
@@ -129,6 +131,7 @@ const Header = () => {
                 </Button>
               ))}
             </Box>
+            <Searchs />
           </Toolbar>
         </Container>
       </AppBar>

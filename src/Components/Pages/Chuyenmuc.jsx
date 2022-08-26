@@ -1,8 +1,7 @@
-import { Button, Grid, Link, Paper, Typography } from '@mui/material'
+import { Grid, Link, Paper, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import { Box } from '@mui/system'
 import axios from 'axios'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { menuHeads } from '../../Services/utils'
 import TopTitle from '../Header/TopTitle'
@@ -28,7 +27,7 @@ const Chuyenmuc = () => {
   const [page, setPage] = useState([])
 
   useEffect(() => {
-    const url = `https://kynguyenso.herokuapp.com/${name}`
+    const url = `https://kynguyenso.herokuapp.com/page/${name}`
 
     axios.get(url).then((res) => {
       const data = res.data.map((item) => ({
@@ -36,11 +35,11 @@ const Chuyenmuc = () => {
         url: item.link,
         image: item.image,
       }))
-      setMainPosts(data.slice(4, 5))
-      setSidePosts(data.slice(9, 11))
+      setMainPosts(data.slice(0, 1))
+      setSidePosts(data.slice(1, 3))
 
-      setFeaturePosts(data.slice(11, 20))
-      setOaPosts(data.slice(28, 40))
+      setFeaturePosts(data.slice(3, 8))
+      setOaPosts(data.slice(3, 19))
     })
   }, [name])
 
@@ -106,7 +105,7 @@ const Chuyenmuc = () => {
                   sx={{ textDecoration: 'none', color: '#212529', paddingBottom: '10px', marginBottom: '10px' }}
                   className="CateBox_Child"
                 >
-                  <img src={item.image} width="100%" height="auto" alt="" />
+                  <img src={item.image} width="100%" height="200px" alt="" />
                   <Typography sx={{ textAlign: 'left' }}>{item.title}</Typography>
                 </Link>
               ))}
@@ -136,6 +135,17 @@ const Chuyenmuc = () => {
             </Grid>
           ))}
         </Grid>
+      </Grid>
+      <Grid container maxWidth="lg" spacing={0} margin="auto">
+        <Grid
+          container
+          item
+          spacing={{
+            xs: 0,
+            sm: 2,
+            md: 1,
+          }}
+        ></Grid>
       </Grid>
     </>
   )
