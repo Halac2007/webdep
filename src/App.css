@@ -26,6 +26,10 @@
   margin-top: -1px;
   margin-left: 8px;
 }
+
+.Page_img img {
+  height: 150px;
+}
 @media (max-width: 768px) {
 }
 

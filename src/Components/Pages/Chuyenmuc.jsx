@@ -1,7 +1,8 @@
-import { Grid, Link, Paper, Typography } from '@mui/material'
+import { Button, Grid, Link, Paper, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
+import { Box } from '@mui/system'
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { menuHeads } from '../../Services/utils'
 import TopTitle from '../Header/TopTitle'
@@ -19,15 +20,13 @@ const Chuyenmuc = () => {
   const [mainPosts, setMainPosts] = useState([])
   const [sidePosts, setSidePosts] = useState([])
   const [oaPosts, setOaPosts] = useState([])
-  const [featurePosts, setFeaturePosts] = useState([])
 
   const { name } = useParams()
 
-  const [listPost, setListPost] = useState([])
   const [page, setPage] = useState([])
 
   useEffect(() => {
-    const url = `https://kynguyenso.herokuapp.com/page/${name}`
+    const url = `https://kynguyenso.herokuapp.com/${name}`
 
     axios.get(url).then((res) => {
       const data = res.data.map((item) => ({
@@ -36,12 +35,28 @@ const Chuyenmuc = () => {
         image: item.image,
       }))
       setMainPosts(data.slice(0, 1))
-      setSidePosts(data.slice(1, 3))
+      setSidePosts(data.slice(5, 7))
 
-      setFeaturePosts(data.slice(3, 8))
-      setOaPosts(data.slice(3, 19))
+      setOaPosts(data.slice(7, 19))
     })
   }, [name])
+
+  const handleClick = useCallback(() => {
+    axios.get(`https://kynguyenso.herokuapp.com/page/${name}`).then((data) => {
+      let start = 4 * page
+      let end = 4 * (page + 1)
+      let arr = data.data.splice(start, end)
+      let result = data.data.slice(arr)
+
+      console.log(data.data.slice(start, end))
+
+      setOaPosts((posts) => [...posts, ...result])
+
+      console.log(setOaPosts((posts) => [...posts, ...result]))
+
+      setPage((page) => page + 1)
+    })
+  }, [name, page])
 
   const headerValue = menuHeads.filter((item) => item.url === name)[0].tittle
   const headerChildren = menuHeads.filter((item) => item.url === name)[0].chilren
@@ -129,7 +144,7 @@ const Chuyenmuc = () => {
           {oaPosts.map((item) => (
             <Grid key={Math.random()} item xs={6} sm={4} md={3}>
               <CateBox>
-                <Link href={item.link} sx={{ textDecoration: 'none', color: '#212529' }}>
+                <Link href={item.link} sx={{ textDecoration: 'none', color: '#212529' }} className="Page_img">
                   <img src={item.image} width="100%" height="auto" alt="" />
                   <Typography>{item.title}</Typography>
                 </Link>
@@ -138,17 +153,12 @@ const Chuyenmuc = () => {
           ))}
         </Grid>
       </Grid>
-      <Grid container maxWidth="lg" spacing={0} margin="auto">
-        <Grid
-          container
-          item
-          spacing={{
-            xs: 0,
-            sm: 2,
-            md: 1,
-          }}
-        ></Grid>
-      </Grid>
+
+      <Box m={1} display="flex" justifyContent={'center'} alignItems={'center'} fontWeight={'900'}>
+        <Button className="btn-more" onClick={handleClick}>
+          Xem thêm
+        </Button>
+      </Box>
     </>
   )
 }
