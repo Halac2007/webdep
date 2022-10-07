@@ -1,3 +1,5 @@
+import { Input } from '@mui/material'
+import { Box } from '@mui/system'
 import React, { useState } from 'react'
 
 const Searchs = () => {
@@ -16,10 +18,7 @@ const Searchs = () => {
 
   return (
     <div style={{ padding: 20 }}>
-      {/* <Input icon="search" placeholder="Search..." type="text" onKeyDown={handleKeyDown} />
-      {filterData.map((item) => (
-        <Box key={Math.random()}>{item}</Box>
-      ))} */}
+      <Input icon="search" placeholder="Search..." type="text" onKeyDown={handleKeyDown} />
     </div>
   )
 }

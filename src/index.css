@@ -18,3 +18,7 @@ code {
 .slick-next:before {
   color: red !important;
 }
+
+.box-1 {
+  border-radius: 20px;
+}

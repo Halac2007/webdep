@@ -16,41 +16,93 @@ const CatePost = (props) => {
   return (
     <>
       <Grid container maxWidth="lg" spacing={0} margin="auto">
-        <Grid container item xs={12} sm={12} md={12}>
-          {props.toppost.map((item) => (
-            <Box key={Math.random()}>
-              <Link href={item.link} sx={{ textDecoration: 'none', color: '#212529' }}>
-                <Typography
-                  sx={{
-                    position: 'absolute',
-                    backgroundColor: 'rgba(255, 255, 255, 0.54)',
+        <Grid container item xs={12} sm={12} md={12} spacing={1}>
+          <Grid item xs={12} sm={6} md={6}>
+            {props.toppost.map((item) => (
+              <Box key={Math.random()} sx={{ position: 'relative' }}>
+                <Link href={item.link} sx={{ textDecoration: 'none', color: '#212529' }}>
+                  <Box className="box-img">
+                    <img src={item.image} width="100%" height="auto" alt="" />
+                  </Box>
+                  <Box
+                    sx={{
+                      width: '100%',
 
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center',
+                      position: 'absolute',
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0) -2%, #000 80%)',
+                      bottom: '4px',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      opacity: '.9',
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        textAlign: 'center',
+                        margin: '5px',
+                        padding: '5px',
+                        fontWeight: '700',
+                        color: '#fff',
+                        typography: {
+                          xs: { xfontSize: '1rem' },
+                          sm: { fontSize: '1.2rem' },
+                          md: {
+                            fontSize: '1.3rem',
+                          },
+                        },
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </Box>
+                </Link>
+              </Box>
+            ))}
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            {props.toppost.map((item) => (
+              <Box key={Math.random()} sx={{ position: 'relative' }}>
+                <Link href={item.link} sx={{ textDecoration: 'none', color: '#212529' }}>
+                  <Box className="box-img">
+                    <img src={item.image} width="100%" height="auto" alt="" />
+                  </Box>
+                  <Box
+                    sx={{
+                      width: '100%',
 
-                    typography: {
-                      xs: { top: '1x`%', height: '80px', margin: '5%', padding: '20px ' },
-                      sm: { top: '15%', height: '80px', margin: '15%', padding: '20px ' },
-                      md: {
-                        top: '10%',
-                        height: '80px',
-                        margin: '20%',
-                        padding: '20px ',
-                      },
-                    },
-                  }}
-                  fontWeight="700"
-                >
-                  {item.title}
-                </Typography>
-                <Box className="img-top">
-                  <img src="https://dep.com.vn/wp-content/uploads/2022/08/U40.jpg" width="100%" height="auto" alt="" />
-                </Box>
-              </Link>
-            </Box>
-          ))}
+                      position: 'absolute',
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0) -2%, #000 80%)',
+                      bottom: '4px',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      opacity: '.9',
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        textAlign: 'center',
+                        margin: '5px',
+                        padding: '5px',
+                        fontWeight: '700',
+                        color: '#fff',
+                        typography: {
+                          xs: { xfontSize: '1rem' },
+                          sm: { fontSize: '1.2rem' },
+                          md: {
+                            fontSize: '1.3rem',
+                          },
+                        },
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </Box>
+                </Link>
+              </Box>
+            ))}
+          </Grid>
         </Grid>
       </Grid>
       <Grid container maxWidth="lg" margin="auto">

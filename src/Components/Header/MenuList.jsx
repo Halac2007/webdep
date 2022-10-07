@@ -9,7 +9,7 @@ const MenuList = ({ menus }) => {
       sx={{
         flexGrow: 0.6,
         display: { xs: 'flex', md: '1' },
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
         color: '#444444',
         fontWeight: 'bold',
         fontSize: 13,

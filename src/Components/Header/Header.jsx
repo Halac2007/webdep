@@ -41,10 +41,14 @@ const Header = () => {
   }
   return (
     <>
-      <AppBar position="static" color="default">
+      <AppBar position="static" color="default" component="nav" sx={{ marginBottom: '1rem' }}>
         <Container maxWidth="xl">
+          <Box className="logo" sx={{ textAlign: 'center', fontSize: '4rem' }}>
+            Cafe sáng
+          </Box>
           <Toolbar>
             <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, ml: 10 }} />
+
             <Typography
               variant="h6"
               noWrap
@@ -59,9 +63,7 @@ const Header = () => {
                 color: 'inherit',
                 textDecoration: 'none',
               }}
-            >
-              LOGO
-            </Typography>
+            ></Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
