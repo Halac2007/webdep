@@ -1,6 +1,7 @@
 import { Grid, Link, Paper, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React from 'react'
+import TitleXe from '../TitleCate/TitleXe'
 
 const CateBox = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -15,29 +16,7 @@ const CateBox = styled(Paper)(({ theme }) => ({
 const Postxevaluat = (props) => {
   return (
     <>
-      <Grid container maxWidth="lg" margin="auto">
-        <Grid item xs={12} sm={12} md={12}>
-          <Typography
-            sx={{
-              textAlign: 'center',
-              fontSize: '3rem',
-              textTransform: 'uppercase',
-              color: '#333333',
-              fontFamily: 'Basker',
-              padding: '3% 0',
-              typography: {
-                md: { fontSize: '3rem' },
-                sm: { fontSize: '2rem' },
-                xs: { fontSize: '1.5rem' },
-              },
-            }}
-          >
-            <Link href="/chuyen-muc/xe-va-luat" sx={{ textDecoration: 'none', color: '#212529' }}>
-              Ô TÔ
-            </Link>
-          </Typography>
-        </Grid>
-      </Grid>
+      <TitleXe />
 
       <Grid container maxWidth="lg" margin="auto">
         <Grid
@@ -49,9 +28,9 @@ const Postxevaluat = (props) => {
           }}
         >
           <Grid item xs={12} sm={4} md={4}>
-            <CateBox>
+            <CateBox className="cate_box_page_top">
               {props.rightx.map((item) => (
-                <Link key={Math.random()} href={item.link} sx={{ textDecoration: 'none', color: '#212529' }}>
+                <Link key={Math.random()} href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
                   <img src={item.image} width="100%" height="auto" alt="" />
 
                   <Typography
@@ -76,11 +55,12 @@ const Postxevaluat = (props) => {
           </Grid>
           <Grid container item xs={12} sm={8} md={8} spacing={2}>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
+              <CateBox className="cate_box_page">
                 {props.carchild1.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
@@ -92,11 +72,12 @@ const Postxevaluat = (props) => {
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
+              <CateBox className="cate_box_page">
                 {props.carchild2.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
@@ -108,11 +89,12 @@ const Postxevaluat = (props) => {
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
+              <CateBox className="cate_box_page">
                 {props.carchild3.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
@@ -124,11 +106,12 @@ const Postxevaluat = (props) => {
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
+              <CateBox className="cate_box_page">
                 {props.carchild4.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
@@ -140,11 +123,12 @@ const Postxevaluat = (props) => {
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
+              <CateBox className="cate_box_page">
                 {props.carchild5.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
@@ -156,11 +140,12 @@ const Postxevaluat = (props) => {
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
+              <CateBox className="cate_box_page">
                 {props.carchild6.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >

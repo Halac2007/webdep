@@ -1,11 +1,14 @@
-* {
-  color: #333333;
-}
-
 .text-link {
   text-decoration: none;
   padding: 10px;
   margin: 10px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.text-link-logo {
+  text-decoration: none;
+  color: #282c34;
 }
 
 /*-----box qc ------*/
@@ -30,7 +33,72 @@
 .Page_img img {
   height: 150px;
 }
-@media (max-width: 768px) {
+
+.img-top img {
+  border-radius: 20px;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+.box-categray img {
+  height: 170px;
+}
+
+.cate_box_page img {
+  height: 150px;
+}
+.cate_box_page_top img {
+  height: 220px;
+}
+
+.box-list img {
+  width: 200px;
+  height: 120px;
+}
+.box-list {
+  font-weight: 700;
+}
+.box_more img {
+  width: 80px;
+}
+
+.hot_top {
+  background: #fff;
+  border: 1px solid #d6d6d6c1;
+}
+
+.font_title {
+  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
+@media screen and (min-device-width: 601px) and (max-device-width: 780px) {
+  .icon_logo {
+    display: none;
+  }
+  .logo-mobile {
+    display: block;
+  }
+
+  .box-categray img {
+    height: 120px;
+  }
+  .cate_box_page img {
+    height: 150px;
+  }
+  .cate_box_page_top img {
+    height: auto;
+  }
+  .cate_box_page img {
+    height: auto;
+  }
+
+  .Box_newtop {
+    display: none;
+  }
+  .Page_img img {
+    height: auto;
+  }
 }
 
 @media (max-width: 600px) {
@@ -57,6 +125,29 @@
   .CateBox_ChildCate img {
     width: 30%;
   }
+  .icon_logo {
+    display: none;
+  }
+  .cate_box_page img {
+    height: auto;
+  }
+  .cate_box_page_top img {
+    height: auto;
+  }
+  .Box_newtop {
+    display: none;
+  }
+
+  .box-list img {
+    width: 140px;
+    height: 100px;
+  }
+  .box-categray img {
+    height: 180px;
+  }
+  .logo-mobile {
+    display: block;
+  }
 }
 @media (max-width: 480px) {
   /*------------CateBox_Child---------------------*/
@@ -71,6 +162,9 @@
     width: 30%;
   }
 
+  .icon_logo {
+    display: none;
+  }
   /*----------------------*/
   /*------------CateBox_Child---------------------*/
   .CateBox_ChildCate {
@@ -83,6 +177,12 @@
   }
   .CateBox_ChildCate img {
     width: 30%;
+  }
+  .box-categray img {
+    height: 120px;
+  }
+  .logo-mobile {
+    display: block;
   }
 }
 

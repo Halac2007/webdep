@@ -8,7 +8,6 @@ const Footer = () => {
   return (
     <Grid container maxWidth="900px" m="auto" p="30px 10px" sx={{ borderTop: '1px solid #333333', marginTop: '15px' }}>
       <Grid container item xs={12} sm={3} md={3} spacing={1}>
-        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, ml: 10 }} />
         <Typography
           variant="h6"
           noWrap
@@ -24,7 +23,7 @@ const Footer = () => {
             textDecoration: 'none',
           }}
         >
-          LOGO
+          <img src="logo_1.png" alt="" width="100%" />
         </Typography>
       </Grid>
       <Grid container item xs={12} sm={9} md={9} spacing={1}>

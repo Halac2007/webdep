@@ -1,6 +1,8 @@
 import { Grid, Link, Paper, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React from 'react'
+import Skeleton from 'react-loading-skeleton'
+import TitleKns from '../TitleCate/TitleKns'
 
 const CateBox = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -15,30 +17,7 @@ const CateBox = styled(Paper)(({ theme }) => ({
 const PostKynguyenso = (props) => {
   return (
     <>
-      <Grid container maxWidth="lg" margin="auto">
-        <Grid item xs={12} sm={12} md={12}>
-          <Typography
-            sx={{
-              textAlign: 'center',
-              fontSize: '3rem',
-              textTransform: 'uppercase',
-              color: '#333333',
-              fontFamily: 'Basker',
-              padding: '3% 0',
-
-              typography: {
-                md: { fontSize: '3rem' },
-                sm: { fontSize: '2rem' },
-                xs: { fontSize: '1.5rem' },
-              },
-            }}
-          >
-            <Link href="/chuyen-muc/ky-nguyen-so" sx={{ textDecoration: 'none', color: '#212529' }}>
-              CÔNG NGHỆ MỚI
-            </Link>
-          </Typography>
-        </Grid>
-      </Grid>
+      <TitleKns />
       <Grid container maxWidth="lg" margin="auto">
         <Grid
           container
@@ -49,10 +28,10 @@ const PostKynguyenso = (props) => {
           }}
         >
           <Grid item xs={12} sm={4} md={4}>
-            <CateBox>
-              {props.rightpost.map((item) => (
-                <Link key={Math.random()} href={item.link} sx={{ textDecoration: 'none', color: '#212529' }}>
-                  <img src={item.image} width="100%" height="auto" alt="" />
+            <CateBox className="cate_box_page_top">
+              {props.listtop.map((item) => (
+                <Link key={Math.random()} href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
+                  <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
 
                   <Typography
                     sx={{
@@ -68,7 +47,7 @@ const PostKynguyenso = (props) => {
                     Kỷ nguyên số
                   </Typography>
                   <Typography sx={{ textTransform: 'uppercase', fontSize: '1.2rem', textAlign: 'center', padding: '2rem 0' }}>
-                    {item.title}
+                    {item.title || <Skeleton count={2} />}
                   </Typography>
                 </Link>
               ))}
@@ -76,96 +55,102 @@ const PostKynguyenso = (props) => {
           </Grid>
           <Grid container item xs={12} sm={8} md={8} spacing={2}>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
-                {props.child11.map((item) => (
+              <CateBox className="cate_box_page">
+                {props.listtop_1.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image} width="100%" height="auto" alt="" />
-                    <Typography>{item.title}</Typography>
+                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
+                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
                   </Link>
                 ))}
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
-                {props.child1.map((item) => (
+              <CateBox className="cate_box_page">
+                {props.listtop_2.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image} width="100%" height="auto" alt="" />
+                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title}</Typography>
+                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
                   </Link>
                 ))}
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
-                {props.child2.map((item) => (
+              <CateBox className="cate_box_page">
+                {props.listtop_3.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image} width="100%" height="auto" alt="" />
+                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title}</Typography>
+                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
                   </Link>
                 ))}
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
-                {props.child3.map((item) => (
+              <CateBox className="cate_box_page">
+                {props.listtop_4.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
                     <img src={item.image} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title}</Typography>
+                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
                   </Link>
                 ))}
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
-                {props.child4.map((item) => (
+              <CateBox className="cate_box_page">
+                {props.listtop_5.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image} width="100%" height="auto" alt="" />
+                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title}</Typography>
+                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
                   </Link>
                 ))}
               </CateBox>
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-              <CateBox>
-                {props.child5.map((item) => (
+              <CateBox className="cate_box_page">
+                {props.listtop_6.map((item) => (
                   <Link
                     key={Math.random()}
                     href={item.link}
+                    target="_blank"
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image} width="100%" height="auto" alt="" />
+                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title}</Typography>
+                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
                   </Link>
                 ))}
               </CateBox>

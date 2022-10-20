@@ -1,4 +1,4 @@
-import AdbIcon from '@mui/icons-material/Adb'
+import { AccountCircle } from '@mui/icons-material'
 import MenuIcon from '@mui/icons-material/Menu'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
@@ -11,7 +11,6 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Searchs from './Searchs'
 
 const menus = [
   { id: 1, title: 'Công nghệ mới', url: '/chuyen-muc/ky-nguyen-so' },
@@ -41,14 +40,14 @@ const Header = () => {
   }
   return (
     <>
-      <AppBar position="static" color="default" component="nav" sx={{ marginBottom: '1rem' }}>
-        <Container maxWidth="xl">
-          <Box className="logo" sx={{ textAlign: 'center', fontSize: '4rem' }}>
-            Cafe sáng
+      <AppBar position="sticky" component="nav" sx={{ marginBottom: '1rem', backgroundColor: '#08695d' }}>
+        <Link to="/" className="text-link-logo">
+          <Box className="icon_logo" sx={{ textAlign: 'center', fontSize: '5rem' }}>
+            <img src="logo_1.png" alt="" width="20%" />
           </Box>
+        </Link>
+        <Container maxWidth="xl">
           <Toolbar>
-            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, ml: 10 }} />
-
             <Typography
               variant="h6"
               noWrap
@@ -96,7 +95,11 @@ const Header = () => {
                 }}
               >
                 {menus.map((menu) => (
-                  <MenuItem key={Math.random()} onClick={handleCloseNavMenu} sx={{ borderBottom: '1px solid #dbdbdb' }}>
+                  <MenuItem
+                    key={Math.random()}
+                    onClick={handleCloseNavMenu}
+                    sx={{ borderBottom: '1px solid #dbdbdb', backgroundColor: '#08695d' }}
+                  >
                     <Link to={menu.url} className="text-link">
                       <Typography>{menu.title}</Typography>
                     </Link>
@@ -104,36 +107,32 @@ const Header = () => {
                 ))}
               </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-            >
-              LOGO
-            </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', marginLeft: '5%' }, justifyContent: 'center' }}>
               {menus.map((menu) => (
-                <Button key={Math.random()} onClick={handleCloseNavMenu} sx={{ my: 0, mx: 8, color: 'white', display: 'block' }}>
+                <Button key={Math.random()} onClick={handleCloseNavMenu} sx={{ my: 0, mx: 5, color: '#fff', display: 'block' }}>
                   <Link to={menu.url} className="text-link">
-                    <Typography>{menu.title}</Typography>
+                    <Typography sx={{ textAlign: 'center' }}>{menu.title}</Typography>
                   </Link>
                 </Button>
               ))}
+
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                color="inherit"
+                sx={{ marginLeft: '12%' }}
+              >
+                <AccountCircle />
+              </IconButton>
             </Box>
-            <Searchs />
+            <Link to="/">
+              <Box className="logo-mobile" sx={{ textAlign: 'center' }}>
+                <img src="logo_1.png" alt="" width="60%" />
+              </Box>
+            </Link>
           </Toolbar>
         </Container>
       </AppBar>

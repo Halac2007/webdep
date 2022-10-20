@@ -9,6 +9,179 @@ import PostKynguyenso from '../Components/Posts/Posthomes/PostKynguyenso'
 import Postxevaluat from '../Components/Posts/Posthomes/Postxevaluat'
 
 const Services = () => {
+  /*-------data home plo-------------------*/
+  //OA
+  const [oaLeft, setoaLeft] = useState([])
+  const [oaRight, setoaRight] = useState([])
+
+  // Tiêu điểm
+  const [hotLeftKNS, setHotLeftKNS] = useState([])
+  const [hotASSK, setHotASSK] = useState([])
+  const [hotXe, setHotXe] = useState([])
+  const [hotRightKNS, setHotRightKNS] = useState([])
+
+  //
+
+  const [cateKNSLeft, setcateKNSLeft] = useState([])
+
+  const [cateASSK, setcateASSK] = useState([])
+
+  const [cateKNSRight, setcateKNSRight] = useState([])
+
+  const [cateXe, setcateXe] = useState([])
+
+  const [isLoading, setIsLoading] = useState(true)
+  useEffect(() => {
+    axios.get(`https://data-cafebuoisang.herokuapp.com/`).then((res) => {
+      const data = res.data.map((item) => ({
+        title: item.title,
+        link: item.link,
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
+        imagetop: item.imageTop,
+        time: item.time,
+      }))
+      setIsLoading(false)
+      //OA
+      setoaLeft(data.slice(8, 9))
+      setoaRight(data.slice(0, 1))
+      //Tiêu điểm
+      setHotLeftKNS(data.slice(9, 10))
+      setHotASSK(data.slice(1, 2))
+      setHotXe(data.slice(4, 5))
+      setHotRightKNS(data.slice(11, 12))
+      //
+
+      // setcateKNSLeft(data.slice(10, 11))
+      // setcateASSK(data.slice(1, 2))
+      // setcateKNSRight(data.slice(11, 12))
+      // setcateXe(data.slice(4, 4))
+    })
+  }, [])
+
+  // Page KNS
+  const [pageList, setPageList] = useState([])
+
+  useEffect(() => {
+    axios.get(`https://data-cafebuoisang.herokuapp.com/`).then((res) => {
+      const data = res.data.map((item) => ({
+        title: item.title,
+        link: item.link,
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
+        imagetop: item.imageTop,
+        time: item.time,
+      }))
+
+      setPageList(data.slice(10, 11))
+    })
+  }, [])
+  //
+  const [pageList1, setPageList1] = useState([])
+
+  useEffect(() => {
+    axios.get(`https://data-cafebuoisang.herokuapp.com/thiet-bi-so`).then((res) => {
+      const data = res.data.map((item) => ({
+        title: item.title,
+        link: item.link,
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
+        imagetop: item.imageTop,
+        time: item.time,
+      }))
+
+      setPageList1(data.slice(0, 1))
+    })
+  }, [])
+  //
+
+  //
+  const [pageList2, setPageList2] = useState([])
+
+  useEffect(() => {
+    axios.get(`https://data-cafebuoisang.herokuapp.com/nhip-cong-nghe`).then((res) => {
+      const data = res.data.map((item) => ({
+        title: item.title,
+        link: item.link,
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
+        imagetop: item.imageTop,
+        time: item.time,
+      }))
+
+      setPageList2(data.slice(0, 1))
+    })
+  }, [])
+
+  //
+  const [pageList3, setPageList3] = useState([])
+
+  useEffect(() => {
+    axios.get(`https://data-cafebuoisang.herokuapp.com/tuyet-chieu`).then((res) => {
+      const data = res.data.map((item) => ({
+        title: item.title,
+        link: item.link,
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
+        imagetop: item.imageTop,
+        time: item.time,
+      }))
+
+      setPageList3(data.slice(13, 14))
+    })
+  }, [])
+
+  //
+  //
+  const [pageList4, setPageList4] = useState([])
+
+  useEffect(() => {
+    axios.get(`https://data-cafebuoisang.herokuapp.com/kinh-doanh-online`).then((res) => {
+      const data = res.data.map((item) => ({
+        title: item.title,
+        link: item.link,
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
+        imagetop: item.imageTop,
+        time: item.time,
+      }))
+
+      setPageList4(data.slice(1, 2))
+    })
+  }, [])
+
+  //
+  const [pageList5, setPageList5] = useState([])
+
+  useEffect(() => {
+    axios.get(`https://data-cafebuoisang.herokuapp.com/cong-nghe-40`).then((res) => {
+      const data = res.data.map((item) => ({
+        title: item.title,
+        link: item.link,
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
+        imagetop: item.imageTop,
+        time: item.time,
+      }))
+
+      setPageList5(data.slice(0, 1))
+    })
+  }, [])
+  //
+
+  const [pageList6, setPageList6] = useState([])
+
+  useEffect(() => {
+    axios.get(`https://data-cafebuoisang.herokuapp.com/tuyet-chieu`).then((res) => {
+      const data = res.data.map((item) => ({
+        title: item.title,
+        link: item.link,
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
+        imagetop: item.imageTop,
+        time: item.time,
+      }))
+
+      console.log('kns gggg', data)
+
+      setPageList6(data.slice(1, 2))
+    })
+  }, [])
+
+  //data page ASSK
+
   const [oaPost, setOaPost] = useState([])
 
   const [rightPost, setRightPost] = useState([])
@@ -20,152 +193,31 @@ const Services = () => {
   const [foodChild6, setFoodChild6] = useState([])
 
   useEffect(() => {
-    const url = `https://kynguyenso.herokuapp.com/an-sach-song-khoe`
+    const url = `https://data-cafebuoisang.herokuapp.com/an-sach-song-khoe`
 
     axios.get(url).then((res) => {
       const data = res.data.map((item) => ({
         title: item.title,
         link: item.link,
-        image: item.image,
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
         imagetop: item.imageTop,
         time: item.time,
       }))
-      setOaPost(data.slice(0, 1))
 
-      setRightPost(data.slice(5, 6))
-      setFoodChild1(data.slice(6, 7))
-      setFoodChild2(data.slice(7, 8))
-      setFoodChild3(data.slice(8, 9))
-      setFoodChild4(data.slice(9, 10))
-      setFoodChild5(data.slice(10, 11))
-      setFoodChild6(data.slice(11, 12))
+      setRightPost(data.slice(6, 7))
+
+      setFoodChild1(data.slice(7, 8))
+      setFoodChild2(data.slice(8, 9))
+      setFoodChild3(data.slice(9, 10))
+      setFoodChild4(data.slice(1, 2))
+      setFoodChild5(data.slice(2, 3))
+      setFoodChild6(data.slice(3, 4))
+
+      setOaPost(data.slice(2, 3))
     })
   }, [])
 
-  /*-------kỷ nguyên số-------------------*/
-  const [topPost, setTopPost] = useState([])
-
-  const [hotNewsLeft, setHotNewsLeft] = useState([])
-  const [hotNewsRight, setHotNewsRight] = useState([])
-
-  const [mainPost, setMainPost] = useState([])
-
-  const [listPostChild, setListPostChild] = useState([])
-
-  useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com`).then((res) => {
-      const data = res.data.map((item) => ({
-        title: item.title,
-        link: item.link,
-        image: item.image,
-        imagetop: item.imageTop,
-        time: item.time,
-      }))
-      setTopPost(data.slice(0, 1))
-
-      setHotNewsLeft(data.slice(1, 2))
-      setHotNewsRight(data.slice(2, 3))
-
-      setMainPost(data.slice(5, 6))
-      setListPostChild(data.slice(6, 9))
-    })
-  }, [])
-
-  /*----------KỶ NGUYÊN SỐ CATEGARY------------------*/
-
-  const [catePost, setCatePost] = useState([])
-
-  useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/tuyet-chieu`).then((res) => {
-      const data = res.data.map((item) => ({
-        title: item.title,
-        link: item.link,
-        image: item.image,
-        imagetop: item.imageTop,
-        time: item.time,
-      }))
-      setCatePost(data.slice(0, 1))
-    })
-  }, [])
-
-  const [catePostChild1, setCatePostChild1] = useState([])
-  const [catePostChild11, setCatePostChild11] = useState([])
-
-  useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/`).then((res) => {
-      const data = res.data.map((item) => ({
-        title: item.title,
-        link: item.link,
-        image: item.image,
-        imagetop: item.imageTop,
-        time: item.time,
-      }))
-      setCatePostChild1(data.slice(5, 6))
-      setCatePostChild11(data.slice(4, 5))
-    })
-  }, [])
-
-  const [catePostChild2, setCatePostChild2] = useState([])
-
-  useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/`).then((res) => {
-      const data = res.data.map((item) => ({
-        title: item.title,
-        link: item.link,
-        image: item.image,
-        imagetop: item.imageTop,
-        time: item.time,
-      }))
-      setCatePostChild2(data.slice(0, 1))
-    })
-  }, [])
-
-  const [catePostChild3, setCatePostChild3] = useState([])
-
-  useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/nhip-cong-nghe`).then((res) => {
-      const data = res.data.map((item) => ({
-        title: item.title,
-        link: item.link,
-        image: item.image,
-        imagetop: item.imageTop,
-        time: item.time,
-      }))
-      setCatePostChild3(data.slice(0, 1))
-    })
-  }, [])
-
-  const [catePostChild4, setCatePostChild4] = useState([])
-
-  useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/kinh-doanh-online`).then((res) => {
-      const data = res.data.map((item) => ({
-        title: item.title,
-        link: item.link,
-        image: item.image,
-        imagetop: item.imageTop,
-        time: item.time,
-      }))
-      setCatePostChild4(data.slice(0, 1))
-    })
-  }, [])
-
-  const [catePostChild5, setCatePostChild5] = useState([])
-
-  useEffect(() => {
-    axios.get(`https://kynguyenso.herokuapp.com/thiet-bi-so`).then((res) => {
-      const data = res.data.map((item) => ({
-        title: item.title,
-        link: item.link,
-        image: item.image,
-        imagetop: item.imageTop,
-        time: item.time,
-      }))
-      setCatePostChild5(data.slice(0, 1))
-    })
-  }, [])
-
-  /*------xe và luật -------------*/
+  // page xe
 
   const [feaPost, setFeaPost] = useState([])
 
@@ -179,93 +231,51 @@ const Services = () => {
   const [carPostChild6, setCarPostChild6] = useState([])
 
   useEffect(() => {
-    const url = `https://kynguyenso.herokuapp.com/xe-va-luat`
+    const url = `https://data-cafebuoisang.herokuapp.com/xe-va-luat`
     axios.get(url).then((res) => {
       const data = res.data.map((item) => ({
         title: item.title,
         link: item.link,
-        image: item.image,
+
+        image: item.image.replace(/.[0-9]*x[0-9]{3}/, ''),
         imagetop: item.imageTop,
         time: item.time,
       }))
+
       setFeaPost(data.slice(0, 1))
 
       setRightXPost(data.slice(5, 6))
       setCarPostChild1(data.slice(6, 7))
       setCarPostChild2(data.slice(7, 8))
       setCarPostChild3(data.slice(8, 9))
-      setCarPostChild4(data.slice(9, 10))
-      setCarPostChild5(data.slice(10, 11))
-      setCarPostChild6(data.slice(11, 12))
+      setCarPostChild4(data.slice(1, 2))
+      setCarPostChild5(data.slice(2, 3))
+      setCarPostChild6(data.slice(3, 4))
     })
   }, [])
 
-  /*-----Tin tieu điểm---------------*/
-
-  const [listTopNews, setListTopNews] = useState([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const respGlobal = await axios(`https://kynguyenso.herokuapp.com/tong-hop`)
-      const respRepos = await axios(`https://kynguyenso.herokuapp.com/xe-va-luat`)
-
-      const arr1 = respGlobal.data.slice(6, 8)
-      const arr2 = respRepos.data.slice(11, 13)
-      const arr3 = [...arr1, ...arr2]
-
-      console.log(arr3)
-
-      setListTopNews(arr3)
-    }
-
-    fetchData()
-  }, [])
-
-  /*--------------chuyên mục kỷ nguyên số ----------------------*/
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const respRepos = await axios(`https://kynguyenso.herokuapp.com/nhip-cong-nghe`)
-      const res3 = await axios(`https://kynguyenso.herokuapp.com/thiet-bi-so`)
-      const res4 = await axios(`https://kynguyenso.herokuapp.com/tuyet-chieu`)
-
-      const arr2 = respRepos.data
-      const arr3 = res3.data
-      const arr4 = res4.data
-      const arrNews = [...arr2, ...arr3, ...arr4]
-
-      setListTopNews(arrNews)
-    }
-
-    fetchData()
-  }, [])
-
-  /*-------------load more-------------*/
-  // const handleClick = useCallback(() => {
-  //   axios.get(`https://crawlassk.herokuapp.com/`).then((data) => {
-  //     let start = 26 * page
-  //     let end = 26 * (page + 1)
-  //     let result = data.data.slice(start, end)
-  //     setListPost((posts) => [...posts, ...result])
-
-  //     setPage((page) => page + 1)
-  //   })
-  // }, [page])
+  //
 
   return (
     <Box>
-      <CatePost toppost={topPost} hotleft={hotNewsLeft} rpost={oaPost} xpost={feaPost} hotright={hotNewsRight} />
+      <CatePost
+        isLoading={isLoading}
+        toppost={oaLeft}
+        topr={oaRight}
+        hotleft={hotLeftKNS}
+        rpost={hotASSK}
+        xpost={hotXe}
+        hotright={hotRightKNS}
+      />
+
       <PostKynguyenso
-        main={mainPost}
-        list={listPostChild}
-        rightpost={catePost}
-        topcate={catePost}
-        child1={catePostChild1}
-        child11={catePostChild11}
-        child2={catePostChild2}
-        child3={catePostChild3}
-        child4={catePostChild4}
-        child5={catePostChild5}
+        listtop={pageList}
+        listtop_1={pageList1}
+        listtop_2={pageList2}
+        listtop_3={pageList3}
+        listtop_4={pageList4}
+        listtop_5={pageList5}
+        listtop_6={pageList6}
       />
 
       <Box m={1} sx={{ display: { xs: 'flex', md: 'none' } }} justifyContent={'center'} alignItems={'center'} fontWeight={'900'}>
@@ -278,8 +288,6 @@ const Services = () => {
       </Box>
 
       <Postassk
-        main={mainPost}
-        list={listPostChild}
         rightpost={rightPost}
         foodchild1={foodChild1}
         foodchild2={foodChild2}
@@ -298,8 +306,6 @@ const Services = () => {
       </Box>
       {/* <PostTintuc listchil={listTopNews} /> */}
       <Postxevaluat
-        main={mainPost}
-        list={listPostChild}
         rightx={rightXPost}
         carchild1={carPostChild1}
         carchild2={carPostChild2}
