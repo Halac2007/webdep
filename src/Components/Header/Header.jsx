@@ -11,6 +11,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Searchs from './Searchs'
 
 const menus = [
   { id: 1, title: 'Công nghệ mới', url: '/chuyen-muc/ky-nguyen-so' },
@@ -40,6 +41,7 @@ const Header = () => {
   }
   return (
     <>
+      <Searchs />
       <AppBar position="sticky" component="nav" sx={{ marginBottom: '1rem', backgroundColor: '#08695d' }}>
         <Link to="/" className="text-link-logo">
           <Box className="icon_logo" sx={{ textAlign: 'center', fontSize: '5rem' }}>

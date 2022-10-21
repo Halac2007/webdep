@@ -2,10 +2,12 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Services from '../../Services/Services'
 import Chuyenmuc from '../Pages/Chuyenmuc'
+import ComponentSearch from '../Pages/ComponentSearch'
 
 const links = [
   { id: '1', path: '/', e: <Services /> },
   { id: '2', path: '/chuyen-muc/:name/', e: <Chuyenmuc /> },
+  { id: '3', path: '/tim-kiem/:key/', e: <ComponentSearch /> },
 ]
 const Main = () => {
   return (
