@@ -41,6 +41,7 @@ const Services = () => {
         time: item.time,
       }))
       setIsLoading(false)
+
       //OA
       setoaLeft(data.slice(8, 9))
       setoaRight(data.slice(0, 1))
@@ -75,6 +76,7 @@ const Services = () => {
     })
   }, [])
   //
+
   const [pageList1, setPageList1] = useState([])
 
   useEffect(() => {
@@ -192,6 +194,8 @@ const Services = () => {
   const [foodChild5, setFoodChild5] = useState([])
   const [foodChild6, setFoodChild6] = useState([])
 
+  const [isLoadingAssk, setIsLoadingAssk] = useState(true)
+
   useEffect(() => {
     const url = `https://data-cafebuoisang.herokuapp.com/an-sach-song-khoe`
 
@@ -203,6 +207,7 @@ const Services = () => {
         imagetop: item.imageTop,
         time: item.time,
       }))
+      setIsLoadingAssk(false)
 
       setRightPost(data.slice(6, 7))
 
@@ -288,6 +293,7 @@ const Services = () => {
       </Box>
 
       <Postassk
+        isLoadingAssk={isLoadingAssk}
         rightpost={rightPost}
         foodchild1={foodChild1}
         foodchild2={foodChild2}

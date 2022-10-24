@@ -30,10 +30,6 @@
   margin-left: 8px;
 }
 
-.Page_img img {
-  height: 150px;
-}
-
 .img-top img {
   border-radius: 20px;
 }
@@ -72,6 +68,10 @@
 .font_title {
   font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
 }
+
+.skeleton_topstyle {
+  height: 300px;
+}
 @media screen and (min-device-width: 601px) and (max-device-width: 780px) {
   .icon_logo {
     display: none;
@@ -96,8 +96,9 @@
   .Box_newtop {
     display: none;
   }
-  .Page_img img {
-    height: auto;
+
+  .skeleton_topstyle {
+    height: 280px;
   }
 }
 
@@ -148,6 +149,9 @@
   .logo-mobile {
     display: block;
   }
+  .skeleton_topstyle {
+    height: 280px;
+  }
 }
 @media (max-width: 480px) {
   /*------------CateBox_Child---------------------*/
@@ -183,6 +187,9 @@
   }
   .logo-mobile {
     display: block;
+  }
+  .skeleton_topstyle {
+    height: 200px;
   }
 }
 

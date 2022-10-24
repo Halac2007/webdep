@@ -19,7 +19,9 @@ const CatePost = (props) => {
       <Grid container maxWidth="lg" margin="auto">
         <Grid container item xs={12} sm={12} md={12}>
           <Grid item xs={12} sm={6} md={6} sx={{ position: 'relative' }}>
-            {props.isLoading && <Skeleton variant="rectangular" width="100%" height={200} />}
+            {props.isLoading && (
+              <Skeleton width="100%" variant="rectangular" height="280px" sx={{ borderRadius: '20px', margin: '5px' }} />
+            )}
             {props.toppost.map((item) => (
               <Box key={Math.random()} sx={{ borderRadius: '20px', padding: '5px' }}>
                 <Link href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
@@ -66,7 +68,9 @@ const CatePost = (props) => {
             ))}
           </Grid>
           <Grid item xs={12} sm={6} md={6} sx={{ position: 'relative' }}>
-            {props.isLoading && <Skeleton variant="rectangular" width="100%" height={200} sx={{ margin: '20px' }} />}
+            {props.isLoading && (
+              <Skeleton width="100%" variant="rectangular" height="280px" sx={{ borderRadius: '20px', margin: '5px' }} />
+            )}{' '}
             {props.topr.map((item) => (
               <Box key={Math.random()} sx={{ borderRadius: '20px', padding: '5px' }}>
                 <Link href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
@@ -147,6 +151,9 @@ const CatePost = (props) => {
         >
           <Grid item xs={6} sm={3} md={3}>
             <CateBox className="box-categray">
+              {props.isLoading && (
+                <Skeleton width="100%" variant="rectangular" height="146px" sx={{ borderRadius: '20px', margin: '5px' }} />
+              )}{' '}
               {props.hotleft.map((item) => (
                 <Link key={Math.random()} href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
                   <img src={item.image} width="100%" height="auto" alt="" />
@@ -186,6 +193,9 @@ const CatePost = (props) => {
           </Grid>
           <Grid item xs={6} sm={3} md={3}>
             <CateBox className="box-categray">
+              {props.isLoading && (
+                <Skeleton width="100%" variant="rectangular" height="146px" sx={{ borderRadius: '20px', margin: '5px' }} />
+              )}{' '}
               {props.rpost.map((item) => (
                 <Link key={Math.random()} href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
                   <img src={item.image} width="100%" height="auto" alt="" />
@@ -224,6 +234,9 @@ const CatePost = (props) => {
           </Grid>
           <Grid item xs={6} sm={3} md={3}>
             <CateBox className="box-categray">
+              {props.isLoading && (
+                <Skeleton width="100%" variant="rectangular" height="146px" sx={{ borderRadius: '20px', margin: '5px' }} />
+              )}{' '}
               {props.xpost.map((item) => (
                 <Link key={Math.random()} href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
                   <img src={item.image} width="100%" height="auto" alt="" />
@@ -262,6 +275,9 @@ const CatePost = (props) => {
           </Grid>
           <Grid item xs={6} sm={3} md={3}>
             <CateBox className="box-categray">
+              {props.isLoading && (
+                <Skeleton width="100%" variant="rectangular" height="146px" sx={{ borderRadius: '20px', margin: '5px' }} />
+              )}{' '}
               {props.hotright.map((item) => (
                 <Link key={Math.random()} href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
                   <img src={item.image} width="100%" height="auto" alt="" />

@@ -146,7 +146,7 @@ const Chuyenmuc = () => {
           }}
         >
           {oaPosts.map((item) => (
-            <Grid key={Math.random()} item xs={12} sm={6} md={3}>
+            <Grid key={Math.random()} item xs={6} sm={6} md={3}>
               <CateBox>
                 <Link href={item.link} sx={{ textDecoration: 'none', color: '#212529' }} className="Page_img">
                   <img src={item.image} width="100%" height="auto" alt="" />

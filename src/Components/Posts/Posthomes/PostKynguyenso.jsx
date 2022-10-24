@@ -1,7 +1,6 @@
 import { Grid, Link, Paper, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React from 'react'
-import Skeleton from 'react-loading-skeleton'
 import TitleKns from '../TitleCate/TitleKns'
 
 const CateBox = styled(Paper)(({ theme }) => ({
@@ -31,7 +30,7 @@ const PostKynguyenso = (props) => {
             <CateBox className="cate_box_page_top">
               {props.listtop.map((item) => (
                 <Link key={Math.random()} href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
-                  <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
+                  <img src={item.image} width="100%" height="auto" alt="" />
 
                   <Typography
                     sx={{
@@ -47,7 +46,7 @@ const PostKynguyenso = (props) => {
                     Kỷ nguyên số
                   </Typography>
                   <Typography sx={{ textTransform: 'uppercase', fontSize: '1.2rem', textAlign: 'center', padding: '2rem 0' }}>
-                    {item.title || <Skeleton count={2} />}
+                    {item.title}
                   </Typography>
                 </Link>
               ))}
@@ -64,8 +63,8 @@ const PostKynguyenso = (props) => {
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
-                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
+                    <img src={item.image} width="100%" height="auto" alt="" />
+                    <Typography>{item.title}</Typography>
                   </Link>
                 ))}
               </CateBox>
@@ -80,9 +79,9 @@ const PostKynguyenso = (props) => {
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
+                    <img src={item.image} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
+                    <Typography>{item.title}</Typography>
                   </Link>
                 ))}
               </CateBox>
@@ -97,9 +96,9 @@ const PostKynguyenso = (props) => {
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
+                    <img src={item.image} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
+                    <Typography>{item.title}</Typography>
                   </Link>
                 ))}
               </CateBox>
@@ -116,7 +115,7 @@ const PostKynguyenso = (props) => {
                   >
                     <img src={item.image} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
+                    <Typography>{item.title}</Typography>
                   </Link>
                 ))}
               </CateBox>
@@ -131,9 +130,9 @@ const PostKynguyenso = (props) => {
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
+                    <img src={item.image} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
+                    <Typography>{item.title}</Typography>
                   </Link>
                 ))}
               </CateBox>
@@ -148,9 +147,9 @@ const PostKynguyenso = (props) => {
                     sx={{ textDecoration: 'none', color: '#212529' }}
                     className="CateBox_Child"
                   >
-                    <img src={item.image || <Skeleton count={2} />} width="100%" height="auto" alt="" />
+                    <img src={item.image} width="100%" height="auto" alt="" />
 
-                    <Typography>{item.title || <Skeleton count={2} />}</Typography>
+                    <Typography>{item.title}</Typography>
                   </Link>
                 ))}
               </CateBox>

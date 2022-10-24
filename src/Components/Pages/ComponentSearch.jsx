@@ -23,14 +23,33 @@ const ComponentSearch = () => {
   }, [key])
   return (
     <>
-      <Box>
+      {/* <Box>
         {searchKey.map((item) => (
           <Box key={Math.random()}>
             <img src={item.image} alt="" />
             <Typography>{item.time}</Typography>
           </Box>
         ))}
-      </Box>
+      </Box> */}
+
+      <Grid container maxWidth="1000px" spacing={0} margin="auto">
+        <Grid
+          container
+          item
+          spacing={{
+            xs: 0,
+            sm: 2,
+            md: 1,
+          }}
+        >
+          {searchKey.map((item) => (
+            <Grid key={Math.random()} item xs={6} sm={6} md={3}>
+              <img src={item.image} width="100%" height="auto" alt="" />
+              <Typography sx={{ fontWeight: '700' }}>{item.title}</Typography>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
     </>
   )
 }

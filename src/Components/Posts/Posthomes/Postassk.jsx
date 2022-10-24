@@ -1,6 +1,7 @@
 import { Grid, Link, Paper, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React from 'react'
+import Skeleton from 'react-loading-skeleton'
 import TileAssk from '../TitleCate/TileAssk'
 
 const CateBox = styled(Paper)(({ theme }) => ({
@@ -27,6 +28,9 @@ const Postassk = (props) => {
         >
           <Grid item xs={12} sm={4} md={4}>
             <CateBox className="cate_box_page_top">
+              {props.isLoadingAssk && (
+                <Skeleton width="100%" variant="rectangular" height="280px" sx={{ borderRadius: '20px', margin: '5px' }} />
+              )}
               {props.rightpost.map((item) => (
                 <Link key={Math.random()} href={item.link} target="_blank" sx={{ textDecoration: 'none', color: '#212529' }}>
                   <img src={item.image} width="100%" height="auto" alt="" />
