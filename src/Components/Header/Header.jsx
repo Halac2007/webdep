@@ -41,11 +41,11 @@ const Header = () => {
   }
   return (
     <>
-      <Searchs />
-      <AppBar position="sticky" component="nav" sx={{ marginBottom: '1rem', backgroundColor: '#08695d' }}>
+      {/* <Searchs /> */}
+      <AppBar position="relative" component="nav" sx={{ marginBottom: '1rem', backgroundColor: '#08695d' }}>
         <Link to="/" className="text-link-logo">
           <Box className="icon_logo" sx={{ textAlign: 'center', fontSize: '5rem' }}>
-            <img src="logo_1.png" alt="" width="20%" />
+            <img src="logo-goc.png" alt="" width="20%" />
           </Box>
         </Link>
         <Container maxWidth="xl">
@@ -132,7 +132,7 @@ const Header = () => {
             </Box>
             <Link to="/">
               <Box className="logo-mobile" sx={{ textAlign: 'center' }}>
-                <img src="logo_1.png" alt="" width="60%" />
+                <img src="logo-goc.png" alt="" width="60%" />
               </Box>
             </Link>
           </Toolbar>

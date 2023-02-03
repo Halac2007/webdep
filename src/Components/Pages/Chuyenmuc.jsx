@@ -1,4 +1,4 @@
-import { Button, Grid, Link, Paper, Typography } from '@mui/material'
+import { Button, Grid, Link, Paper, Skeleton, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { Box } from '@mui/system'
 import axios from 'axios'
@@ -26,8 +26,14 @@ const Chuyenmuc = () => {
 
   const [page, setPage] = useState([])
 
+  const [isLoadingPage, setIsLoadingPage] = useState(true)
+
+  const [isLoadingPageLeft, setIsLoadingPageLeft] = useState(true)
+
+  const [isLoadingPageChild, setIsLoadingPageChild] = useState(true)
+
   useEffect(() => {
-    const url = `http://data-cafebuoisang.herokuapp.com/${name}/random`
+    const url = `https://data-cafebuoisang.vercel.app/${name}/random`
 
     axios.get(url).then((res) => {
       const data = res.data.map((item) => ({
@@ -35,6 +41,10 @@ const Chuyenmuc = () => {
         link: item.link,
         image: item.image,
       }))
+      setIsLoadingPage(false)
+      setIsLoadingPageLeft(false)
+      setIsLoadingPageChild(false)
+
       setMainPosts(data.slice(0, 1))
       setSidePosts(data.slice(1, 3))
 
@@ -46,7 +56,7 @@ const Chuyenmuc = () => {
   }, [name])
 
   const handleClick = useCallback(() => {
-    axios.get(`http://data-cafebuoisang.herokuapp.com/${name}/random`).then((data) => {
+    axios.get(`https://data-cafebuoisang.vercel.app/${name}/random`).then((data) => {
       let start = 1 * page
       let end = 4 * (page + 1)
       let arr = data.data.splice(start, end)
@@ -96,6 +106,9 @@ const Chuyenmuc = () => {
         >
           <Grid item xs={12} sm={8} md={8}>
             <CateBox>
+              {isLoadingPage && (
+                <Skeleton width="100%" variant="rectangular" height="300px" sx={{ borderRadius: '20px', margin: '5px' }} />
+              )}
               {mainPosts.map((item) => (
                 <Link key={Math.random()} href={item.link} sx={{ textDecoration: 'none', color: '#212529' }}>
                   <img src={item.image} width="100%" height="auto" alt="" />
@@ -119,6 +132,9 @@ const Chuyenmuc = () => {
           </Grid>
           <Grid item xs={12} sm={4} md={4}>
             <CateBox>
+              {isLoadingPageLeft && (
+                <Skeleton width="100%" variant="rectangular" height="300px" sx={{ borderRadius: '20px', margin: '5px' }} />
+              )}
               {sidePosts.map((item) => (
                 <Link
                   key={Math.random()}
@@ -145,6 +161,9 @@ const Chuyenmuc = () => {
             md: 1,
           }}
         >
+          {isLoadingPageChild && (
+            <Skeleton width="100%" variant="rectangular" height="250px" sx={{ borderRadius: '20px', margin: '5px' }} />
+          )}
           {oaPosts.map((item) => (
             <Grid key={Math.random()} item xs={6} sm={6} md={3}>
               <CateBox>
@@ -191,25 +210,36 @@ const Chuyenmuc = () => {
       </Grid>
       <Grid container maxWidth="1000px" spacing={0} margin="auto">
         <Grid item xs={12} sm={8} md={8} spacing={2}>
+          {isLoadingPage && (
+            <Skeleton
+              width="100%"
+              variant="rectangular"
+              height="800px"
+              sx={{ borderRadius: '20px', margin: '0 -20px', padding: '0 -20px' }}
+            />
+          )}
           {listPost_1.map((item) => (
-            <Link
-              href={item.link}
-              sx={{ display: 'flex', textDecoration: 'none', color: '#212529', borderBottom: '1px solid #eee', margin: '12px' }}
-            >
-              <Box sx={{ paddingBottom: '10px' }} className="box-list">
-                <img src={item.image} width="100%" height="auto" alt="" />
-              </Box>
-              <Typography sx={{ paddingLeft: '10px', marginLeft: '10px', fontWeight: '700' }}>{item.title}</Typography>
-            </Link>
+            <CateBox>
+              <Link
+                href={item.link}
+                sx={{ display: 'flex', textDecoration: 'none', color: '#212529', borderBottom: '1px solid #eee', margin: '12px' }}
+              >
+                <Box sx={{ paddingBottom: '10px' }} className="box-list">
+                  <img src={item.image} width="100%" height="auto" alt="" />
+                </Box>
+                <Typography sx={{ paddingLeft: '10px', marginLeft: '10px', fontWeight: '700' }}>{item.title}</Typography>
+              </Link>
+            </CateBox>
           ))}
         </Grid>
         <Grid item xs={12} sm={4} md={4} spacing={2}>
           <Box className="Box_newtop">
-            <Typography sx={{ backgroundColor: '#900000', padding: '10px', color: '#fff', textAlign: 'center', fontWeight: '700' }}>
+            <Typography sx={{ backgroundColor: '#08695d', padding: '10px', color: '#fff', textAlign: 'center', fontWeight: '700' }}>
               Xem nhiều
             </Typography>
 
             <Box className="hot_top">
+              {isLoadingPage && <Skeleton width="100%" variant="rectangular" height="550px" />}
               {listPost_2.map((item) => (
                 <Link
                   href={item.link}

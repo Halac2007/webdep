@@ -23,7 +23,7 @@ const Footer = () => {
             textDecoration: 'none',
           }}
         >
-          <img src="logo_1.png" alt="" width="100%" />
+          <img src="logo-goc.png" alt="" width="100%" />
         </Typography>
       </Grid>
       <Grid container item xs={12} sm={9} md={9} spacing={1}>

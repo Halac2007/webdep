@@ -1,7 +1,6 @@
-import { Grid, Link, Paper, Typography } from '@mui/material'
+import { Grid, Link, Paper, Skeleton, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React from 'react'
-import Skeleton from 'react-loading-skeleton'
 import TileAssk from '../TitleCate/TileAssk'
 
 const CateBox = styled(Paper)(({ theme }) => ({
@@ -58,6 +57,9 @@ const Postassk = (props) => {
           <Grid container item xs={12} sm={8} md={8} spacing={2}>
             <Grid item xs={12} sm={4} md={4}>
               <CateBox className="cate_box_page">
+                {props.isLoadingAsskChild && (
+                  <Skeleton width="100%" variant="rectangular" height="150px" sx={{ borderRadius: '20px', margin: '5px' }} />
+                )}
                 {props.foodchild1.map((item) => (
                   <Link
                     key={Math.random()}
@@ -75,6 +77,9 @@ const Postassk = (props) => {
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
               <CateBox className="cate_box_page">
+                {props.isLoadingAsskChild && (
+                  <Skeleton width="100%" variant="rectangular" height="150px" sx={{ borderRadius: '20px', margin: '5px' }} />
+                )}
                 {props.foodchild2.map((item) => (
                   <Link
                     key={Math.random()}
@@ -92,6 +97,9 @@ const Postassk = (props) => {
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
               <CateBox className="cate_box_page">
+                {props.isLoadingAsskChild && (
+                  <Skeleton width="100%" variant="rectangular" height="150px" sx={{ borderRadius: '20px', margin: '5px' }} />
+                )}
                 {props.foodchild3.map((item) => (
                   <Link
                     key={Math.random()}
@@ -109,6 +117,9 @@ const Postassk = (props) => {
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
               <CateBox className="cate_box_page">
+                {props.isLoadingAsskChild && (
+                  <Skeleton width="100%" variant="rectangular" height="150px" sx={{ borderRadius: '20px', margin: '5px' }} />
+                )}
                 {props.foodchild4.map((item) => (
                   <Link
                     key={Math.random()}
@@ -126,6 +137,9 @@ const Postassk = (props) => {
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
               <CateBox className="cate_box_page">
+                {props.isLoadingAsskChild && (
+                  <Skeleton width="100%" variant="rectangular" height="150px" sx={{ borderRadius: '20px', margin: '5px' }} />
+                )}
                 {props.foodchild5.map((item) => (
                   <Link
                     key={Math.random()}
@@ -143,6 +157,9 @@ const Postassk = (props) => {
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
               <CateBox className="cate_box_page">
+                {props.isLoadingAsskChild && (
+                  <Skeleton width="100%" variant="rectangular" height="150px" sx={{ borderRadius: '20px', margin: '5px' }} />
+                )}
                 {props.foodchild6.map((item) => (
                   <Link
                     key={Math.random()}

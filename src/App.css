@@ -32,6 +32,7 @@
 
 .img-top img {
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .logo-mobile {
@@ -40,24 +41,29 @@
 
 .box-categray img {
   height: 170px;
+  object-fit: cover;
 }
 
 .cate_box_page img {
   height: 150px;
+  object-fit: cover;
 }
 .cate_box_page_top img {
   height: 220px;
+  object-fit: cover;
 }
 
 .box-list img {
   width: 200px;
   height: 120px;
+  object-fit: cover;
 }
 .box-list {
   font-weight: 700;
 }
 .box_more img {
   width: 80px;
+  object-fit: cover;
 }
 
 .hot_top {
@@ -82,15 +88,19 @@
 
   .box-categray img {
     height: 120px;
+    object-fit: cover;
   }
   .cate_box_page img {
     height: 150px;
+    object-fit: cover;
   }
   .cate_box_page_top img {
     height: auto;
+    object-fit: cover;
   }
   .cate_box_page img {
     height: auto;
+    object-fit: cover;
   }
 
   .Box_newtop {
@@ -113,6 +123,7 @@
   }
   .CateBox_Child img {
     width: 30%;
+    object-fit: cover;
   }
   /*------------CateBox_Child---------------------*/
   .CateBox_ChildCate {
@@ -125,15 +136,18 @@
   }
   .CateBox_ChildCate img {
     width: 30%;
+    object-fit: cover;
   }
   .icon_logo {
     display: none;
   }
   .cate_box_page img {
     height: auto;
+    object-fit: cover;
   }
   .cate_box_page_top img {
     height: auto;
+    object-fit: cover;
   }
   .Box_newtop {
     display: none;
@@ -142,9 +156,11 @@
   .box-list img {
     width: 140px;
     height: 100px;
+    object-fit: cover;
   }
   .box-categray img {
     height: 180px;
+    object-fit: cover;
   }
   .logo-mobile {
     display: block;
@@ -164,6 +180,7 @@
   }
   .CateBox_Child img {
     width: 30%;
+    object-fit: cover;
   }
 
   .icon_logo {
@@ -181,9 +198,11 @@
   }
   .CateBox_ChildCate img {
     width: 30%;
+    object-fit: cover;
   }
   .box-categray img {
     height: 120px;
+    object-fit: cover;
   }
   .logo-mobile {
     display: block;

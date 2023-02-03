@@ -1,4 +1,4 @@
-import { Grid, Link, Paper, Typography } from '@mui/material'
+import { Grid, Link, Paper, Typography, useScrollTrigger } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { Box } from '@mui/system'
 import React from 'react'
@@ -20,7 +20,12 @@ const CatePost = (props) => {
         <Grid container item xs={12} sm={12} md={12}>
           <Grid item xs={12} sm={6} md={6} sx={{ position: 'relative' }}>
             {props.isLoading && (
-              <Skeleton width="100%" variant="rectangular" height="280px" sx={{ borderRadius: '20px', margin: '5px' }} />
+              <Skeleton
+                width="100%"
+                variant="rectangular"
+                height="280px"
+                sx={{ borderRadius: '20px', marginLeft: '-5px', marginBottom: '2px' }}
+              />
             )}
             {props.toppost.map((item) => (
               <Box key={Math.random()} sx={{ borderRadius: '20px', padding: '5px' }}>
@@ -69,7 +74,12 @@ const CatePost = (props) => {
           </Grid>
           <Grid item xs={12} sm={6} md={6} sx={{ position: 'relative' }}>
             {props.isLoading && (
-              <Skeleton width="100%" variant="rectangular" height="280px" sx={{ borderRadius: '20px', margin: '5px' }} />
+              <Skeleton
+                width="100%"
+                variant="rectangular"
+                height="280px"
+                sx={{ borderRadius: '20px', marginRight: '-5px', marginTop: '2px' }}
+              />
             )}{' '}
             {props.topr.map((item) => (
               <Box key={Math.random()} sx={{ borderRadius: '20px', padding: '5px' }}>
